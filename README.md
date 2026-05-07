@@ -8,7 +8,12 @@
 ## Tecnicas aplicadas
 - Extract Method
 - Extract Class
-- Value Objects (DatosCliente, Direccion)
+- Value Objects (DatosCliente, Direccion, LineaPedido, CodigoDescuento)
+
+## Resumen de cambios
+- PedidoService reducido a metodos pequenos de orquestacion.
+- NotificacionService extraido para separar responsabilidades.
+- Data clumps reemplazados por value objects inmutables.
 
 ## Analisis final
 - CC de procesarPedido: X
