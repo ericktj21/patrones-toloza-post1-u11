@@ -1,9 +1,11 @@
-# Refactoring U11 Post 1
+# Refactorizacion U11 Post 1
 
-## Analisis inicial
-- CC de procesarPedido: X
-- Code Smells reportados: X
-- TDR inicial: X
+## Analisis inicial (SonarQube)
+| Metrica | Valor |
+|---------|-------|
+| CC de procesarPedido | 56 |
+| Code Smells reportados | 3 |
+| TDR inicial | 0 min |
 
 ## Tecnicas aplicadas
 - Extract Method
@@ -11,18 +13,23 @@
 - Value Objects (DatosCliente, Direccion, LineaPedido, CodigoDescuento)
 
 ## Resumen de cambios
-- PedidoService reducido a metodos pequenos de orquestacion.
-- NotificacionService extraido para separar responsabilidades.
+- `PedidoService` reducido a metodos de orquestacion.
+- `NotificacionService` extraido para separar responsabilidades.
 - Data clumps reemplazados por value objects inmutables.
 
-## Analisis final
-- CC de procesarPedido: X
-- Code Smells reportados: X
-- TDR final: X
+## Analisis final (SonarQube)
+| Metrica | Valor |
+|---------|-------|
+| CC de procesarPedido | 1 |
+| Code Smells reportados | 0 |
+| TDR final | 0 min |
 
 ## Capturas
-![Dashboard inicial](img/sonar-inicial.png)
-![Dashboard final](img/sonar-final.png)
+![Dashboard SonarQube](img/Dashboard.png)
+![Medidas de CC](img/CC.png)
+![Metodo procesarPedido refactorizado](img/procesarPedido.png)
 
-## Notas
-- Las capturas se guardan en la carpeta img/.
+## Ejecucion del analisis
+1. Levantar SonarQube en Docker.
+2. Ejecutar `mvn verify`.
+3. Ejecutar `mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.token=TU_TOKEN`.
